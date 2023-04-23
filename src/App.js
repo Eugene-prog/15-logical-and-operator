@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Counter from './components/Counter';
 import Button from './components/Button';
-
+import ResetButton from './components/ResetButton';
 
 function App() {
 
@@ -18,14 +18,12 @@ function App() {
     <div className="App" >
       <Counter count={count}/>
       {texts.map((text,index) => {        
-        return <Button onClick={incrementCount} key={index} text ={text}/>
+        return <Button onClick={incrementCount} key={index} text={text}/>
       })}
       {
         (count > 0) && 
         (
-        <div>
-          <button style={buttonStyle} onClick={resetCount}>Reset</button>
-        </div>
+        <ResetButton buttonStyle={buttonStyle} resetCount={resetCount}/>
         )
       }
     </div>
