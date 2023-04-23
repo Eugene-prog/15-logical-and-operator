@@ -8,9 +8,11 @@ function App() {
 
   const[count, setCount]=useState(10);
 
-  const incrementCount = () => setCount(count+1)
+  const incrementCount = () => setCount(count+1);
+  const resetCount = () => setCount(0);
 
-  const texts = ["Click", "Click me", "Push me", "Touch me", "Click me again!"];
+  const texts = ["Click me!", "Click me!", "Click me!", "Click me!", "Click me!"];
+  const buttonStyle = {backgroundColor: "lightgreen"};
 
   return (
     <div className="App" >
@@ -18,6 +20,9 @@ function App() {
       {texts.map((text,index) => {        
         return <Button onClick={incrementCount} key={index} text ={text}/>
       })}
+      <div>
+        <button style={buttonStyle} onClick={resetCount}>Reset</button>
+      </div>
     </div>
   );
 }
