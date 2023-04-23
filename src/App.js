@@ -20,9 +20,14 @@ function App() {
       {texts.map((text,index) => {        
         return <Button onClick={incrementCount} key={index} text ={text}/>
       })}
-      <div>
-        <button style={buttonStyle} onClick={resetCount}>Reset</button>
-      </div>
+      {
+        (count > 0) && 
+        (
+        <div>
+          <button style={buttonStyle} onClick={resetCount}>Reset</button>
+        </div>
+        )
+      }
     </div>
   );
 }
